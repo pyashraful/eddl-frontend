@@ -7,8 +7,6 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-
   test: {
     globals: true,
     environment: 'jsdom',
@@ -19,8 +17,8 @@ export default defineConfig({
   },
 
   resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
-    },
+    alias: [{ find: '@', replacement: './src' }],
   },
+
+  plugins: [react()],
 });
