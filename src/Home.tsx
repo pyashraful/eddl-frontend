@@ -1,9 +1,14 @@
+import Login from '~/Login';
+import Test from './components/TestPdf';
+
 export default function Home() {
   return (
     <div>
+      <Login />
+
       <div className="m-8 shadow-md p-4">
         <div>
-          <h1 className="text-4xl">Payment</h1>
+          <h1 className="text-4xl mb-4">Payment</h1>
           <div>
             <label htmlFor="name" className="ml-1 font-medium text-lg">
               Name
@@ -67,6 +72,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <Test />
     </div>
   );
 }

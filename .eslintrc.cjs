@@ -22,16 +22,6 @@ module.exports = {
   rules: {
     'import/extensions': 0,
     'react/react-in-jsx-scope': 0,
-    'import/order': [
-      'error',
-      {
-        'newlines-between': 'always',
-        groups: [
-          ['builtin', 'external'],
-          ['internal', 'parent', 'sibling', 'index'],
-        ],
-      },
-    ],
     'jsx-a11y/label-has-associated-control': [
       'error',
       {
@@ -49,25 +39,4 @@ module.exports = {
       },
     ],
   },
-
-  // settings: {
-  //   'import/resolver': {
-  //     node: {
-  //       extensions: ['.js', '.tsx', '.ts', '.d.ts'],
-  //     },
-  //     alias: {
-  //       extensions: ['.tsx', '.js', '.ts', '.scss', '.d.ts'],
-  //       map: [
-  //         ['@/', './src/'],
-  //         ['@/components', './src/components'],
-  //         ['@/pages', './src/pages'],
-  //         ['@/router', './src/router'],
-  //         ['@/store', './src/store'],
-  //         ['@/styles', './src/styles'],
-  //         ['@/types', './src/types'],
-  //         ['@/utils', './src/utils'],
-  //       ],
-  //     },
-  //   },
-  // },
 };

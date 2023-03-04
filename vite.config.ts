@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
@@ -15,10 +16,13 @@ export default defineConfig({
     // since parsing CSS is slow
     css: true,
   },
-
   resolve: {
-    alias: [{ find: '@', replacement: './src' }],
+    alias: {
+      '~/': path.resolve(__dirname, 'src'),
+    },
   },
 
   plugins: [react()],
 });
+
+// '~': path.resolve(__dirname, 'src'),
