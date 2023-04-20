@@ -1,17 +1,6 @@
 import React from 'react';
 // import { Document, Page } from 'react-pdf/dist/esm/entry.vite';
-import {
-  Document,
-  Page,
-  View,
-  Text,
-  usePDF,
-  PDFDownloadLink,
-  BlobProvider,
-  StyleSheet,
-  PDFViewer,
-  pdf,
-} from '@react-pdf/renderer';
+import { Document, Page, View, Text, BlobProvider, StyleSheet } from '@react-pdf/renderer';
 
 // import { saveAs } from 'file-saver';
 
