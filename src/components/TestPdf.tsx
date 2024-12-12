@@ -30,12 +30,7 @@ function Test() {
           console.log('🚀 ~ file: TestPdf.tsx:50 ~ Test ~ rest', { ...rest });
           console.log('🚀 ~ file: TestPdf.tsx:50 ~ Test ~ url', url);
 
-          return (
-            // <a href={url} target="_blank" rel="noreferrer">
-            //   Open in new tab
-            // </a>
-            <h1>Test</h1>
-          );
+          return <TestPdfUrl />;
         }}
       </BlobProvider>
     </div>
@@ -43,3 +38,16 @@ function Test() {
 }
 
 export default Test;
+
+const TestPdfUrl = () => {
+  const url = 'https://example.com'; // Ensure this is a valid URL
+
+  return (
+    <div>
+      <a href={url} target="_blank" rel="noreferrer">
+        Open in new tab
+      </a>
+      <h1>Test</h1>
+    </div>
+  );
+};
