@@ -1,10 +1,11 @@
+/* eslint-disable react/no-array-index-key */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function SideBar() {
   const [openIndex, setOpenIndex] = useState(-1);
 
-  const handleToggle = (index) => {
+  const handleToggle = (index: number) => {
     setOpenIndex(openIndex === index ? -1 : index);
   };
 
@@ -17,6 +18,7 @@ function SideBar() {
     {
       name: 'Users',
       icon: 'users',
+      link: 'user',
       subMenu: [
         {
           name: 'All Users',
@@ -31,6 +33,7 @@ function SideBar() {
     {
       name: 'Settings',
       icon: 'settings',
+      link: 'setting',
       subMenu: [
         {
           name: 'Profile',
@@ -74,7 +77,7 @@ function SideBar() {
               {item.name}
             </Link>
             {item.subMenu && (
-              <button onClick={() => handleToggle(index)}>
+              <button type="button" onClick={() => handleToggle(index)}>
                 {openIndex === index ? 'Hide Submenu' : 'Show Submenu'}
               </button>
             )}
