@@ -1,47 +1,9 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react';
-// import { Document, Page } from 'react-pdf/dist/esm/entry.vite';
-import { Document, Page, View, Text, BlobProvider, StyleSheet } from '@react-pdf/renderer';
+import { Document, Page, BlobProvider } from '@react-pdf/renderer';
+import TestPdfDocument from './TestPdfDocument'; // Assuming you have a separate component for the PDF document
 
-// import { saveAs } from 'file-saver';
-
-const styles = StyleSheet.create({
-  page: { backgroundColor: 'tomato' },
-  section: { color: 'white', textAlign: 'center', margin: 30 },
-});
-
-const TestPdf = (
-  <Document>
-    <Page size="A4" style={styles.page}>
-      <View>
-        <Text>Section #1</Text>
-      </View>
-      <View>
-        <Text>Section #2</Text>
-      </View>
-    </Page>
-  </Document>
-);
-
-function Test() {
-  return (
-    <div>
-      <BlobProvider document={TestPdf}>
-        {({ url, ...rest }) => {
-          console.log('🚀 ~ file: TestPdf.tsx:50 ~ Test ~ rest', { ...rest });
-          console.log('🚀 ~ file: TestPdf.tsx:50 ~ Test ~ url', url);
-
-          return <TestPdfUrl />;
-        }}
-      </BlobProvider>
-    </div>
-  );
-}
-
-export default Test;
-
-const TestPdfUrl = () => {
-  const url = 'https://example.com'; // Ensure this is a valid URL
-
+function TestPdfUrl({ url }) {
   return (
     <div>
       <a href={url} target="_blank" rel="noreferrer">
@@ -50,4 +12,18 @@ const TestPdfUrl = () => {
       <h1>Test</h1>
     </div>
   );
-};
+}
+
+function Test() {
+  return (
+    <div>
+      <BlobProvider document={<TestPdfDocument />}>
+        {({ url }) => {
+          return <TestPdfUrl url={url} />;
+        }}
+      </BlobProvider>
+    </div>
+  );
+}
+
+export default Test;
